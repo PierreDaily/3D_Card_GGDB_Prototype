@@ -1,0 +1,12 @@
+$color-black: #000000;
+$color-black-light: #585858;
+$color-blue-grey-light: #9198e5;
+$color-gold: #dcc26e;
+$color-white: #ffffff;
+
+$linear-gradient-gold-to-white: linear-gradient(
+  $color-gold,
+  $color-blue-grey-light
+);
+
+$card-width: 250px;

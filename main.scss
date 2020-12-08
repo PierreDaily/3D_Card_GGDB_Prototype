@@ -1,0 +1,102 @@
+@use "scss/mixin";
+@use "scss/variable";
+
+body {
+  align-items: center;
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.btn {
+  @include mixin.btn;
+}
+
+.btn--select-variant {
+  background: transparent;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+  color: variable.$color-black-light;
+  font-size: 8px;
+  font-weight: 500;
+  height: 16px;
+  width: 40px;
+}
+
+.card {
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
+  height: fit-content;
+  padding: 40px 30px 40px 30px;
+  width: variable.$card-width;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  transform-style: preserve-3d;
+  width: 80%;
+}
+
+h1 {
+  align-self: flex-start;
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 0.8rem;
+  padding: 2rem 0rem;
+  color: #585858;
+  font-weight: lighter;
+  padding: 0;
+}
+.purchase {
+  @include mixin.btn;
+  background-color: variable.$color-gold;
+  border-radius: 25px;
+  color: variable.$color-white;
+  font-size: 10px;
+  font-weight: 500;
+  height: 30px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+.select-size {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.shoe {
+  height: variable.$card-width * 0.7;
+  margin: auto;
+  position: relative;
+  width: variable.$card-width * 0.7;
+}
+
+.shoe__circle {
+  background: variable.$linear-gradient-gold-to-white;
+  border-radius: 50%;
+  height: variable.$card-width * 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: variable.$card-width * 0.7;
+  z-index: -1;
+}
+
+.shoe__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in;
+  width: variable.$card-width * 0.7;
+
+  & > img {
+    height: variable.$card-width * 0.7;
+  }
+}

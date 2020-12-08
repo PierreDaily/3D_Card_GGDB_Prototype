@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./main.scss" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="shoe">
+          <div class="shoe__circle"></div>
+          <picture class="shoe__img">
+            <source  srcset="./assets/sneaker.webp" type="image/webp">
+            <img src="./assets/sneaker.png" alt="sneaker">
+          </picture>
+        </div>
+        <h1>Super-Star sneakers</h1>
+        <h3>
+          Inspiring messages on our sneakers represent the concepts and values
+          that define who we are.
+        </h3>
+        <div class="select-size">
+          <button class="btn btn--select-variant">40</button>
+          <button class="btn btn--select-variant">41</button>
+          <button class="btn btn--select-variant">42</button>
+          <button class="btn btn--select-variant">45</button>
+        </div>
+        <button class="purchase">Purchase</button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

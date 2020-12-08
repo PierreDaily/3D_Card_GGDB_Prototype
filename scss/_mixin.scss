@@ -1,0 +1,10 @@
+@mixin blue-bgc {
+  background-color: blue;
+  @content;
+}
+
+@mixin btn {
+  border: none;
+  border-radius: 15px;
+  padding: 0;
+}

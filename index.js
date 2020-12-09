@@ -6,7 +6,7 @@ const h3 = document.querySelector("h3");
 const [selectSize] = document.getElementsByClassName("select-size ");
 const [purchase] = document.getElementsByClassName("purchase");
 
-const resetAnimation = () => {
+const stopAnimation = () => {
   container.style.transition = "all 0.5s ease";
   container.style.transform = `rotateX(0deg) rotateY(0deg)`;
   h1.style.transition = "all 0.5s ease";
@@ -20,7 +20,11 @@ const resetAnimation = () => {
   shoe.style.transform = "translateZ(0px) rotate(0deg)";
 };
 
-const transform = (callback) => {
+/** 
+ * @param {function} callback - transform function for the .container element
+ */
+
+const startAnimation = (callback) => {
   container.style.transition = "none";
   callback();
   h1.style.transform = "translateZ(250px)";
@@ -29,29 +33,30 @@ const transform = (callback) => {
   purchase.style.transform = "translateZ(50px)";
   shoe.style.transform = "translateZ(250px) rotate(-45deg)";
 };
+
 if (container && h1 && h3 && shoe) {
   container.addEventListener("mousemove", (e) => {
     const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
     const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-    transform(() => {
+    startAnimation(() => {
       container.style.transform = `rotateX(${yAxis}deg) rotateY(${xAxis}deg)`;
     });
   });
 
   container.addEventListener("mouseleave", () => {
-    resetAnimation();
+    stopAnimation();
   });
 }
 
 var hammertime = new Hammer(container);
-hammertime.on("pan", function (ev) {
-  transform(() => {
+hammertime.on("pan", (ev) => {
+  startAnimation(() => {
     container.style.transform = `rotateX(${ev.deltaY / 20}deg) rotateY(${
       ev.deltaX
     }deg)`;
   });
 });
 
-hammertime.on("panend", function (ev) {
-  resetAnimation();
+hammertime.on("panend",  (ev) => {
+  stopAnimation();
 });

@@ -57,6 +57,6 @@ hammertime.on("pan", (ev) => {
   });
 });
 
-hammertime.on("panend",  (ev) => {
+hammertime.on("panend",  () => {
   stopAnimation();
 });
